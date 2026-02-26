@@ -38,11 +38,11 @@ buildkonfig {
     }
 
     defaultConfigs {
-        buildConfigField(Type.STRING, "FIREBASE_API_KEY", "\"${getLocalProperty("FIREBASE_API_KEY")}\"")
-        buildConfigField(Type.STRING, "FIREBASE_APP_ID", "\"${getLocalProperty("FIREBASE_APP_ID")}\"")
-        buildConfigField(Type.STRING, "FIREBASE_PROJECT_ID", "\"${getLocalProperty("FIREBASE_PROJECT_ID")}\"")
-        buildConfigField(Type.STRING, "FIREBASE_STORAGE_BUCKET", "\"${getLocalProperty("FIREBASE_STORAGE_BUCKET")}\"")
-        buildConfigField(Type.STRING, "FIREBASE_AUTH_DOMAIN", "\"${getLocalProperty("FIREBASE_AUTH_DOMAIN")}\"")
+        buildConfigField(Type.STRING, "FIREBASE_API_KEY", getLocalProperty("FIREBASE_API_KEY"))
+        buildConfigField(Type.STRING, "FIREBASE_APP_ID", getLocalProperty("FIREBASE_APP_ID"))
+        buildConfigField(Type.STRING, "FIREBASE_PROJECT_ID", getLocalProperty("FIREBASE_PROJECT_ID"))
+        buildConfigField(Type.STRING, "FIREBASE_STORAGE_BUCKET", getLocalProperty("FIREBASE_STORAGE_BUCKET"))
+        buildConfigField(Type.STRING, "FIREBASE_AUTH_DOMAIN", getLocalProperty("FIREBASE_AUTH_DOMAIN"))
     }
 }
 

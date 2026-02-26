@@ -8,5 +8,9 @@ data class LoginScreenState(
     val isLoading: Boolean = false,
 ) {
     val isFormValid: Boolean
-        get() = !isLoading && emailError == null && passwordError == null
+        get() = !isLoading &&
+                email.isNotBlank() &&
+                password.isNotBlank() &&
+                emailError == null &&
+                passwordError == null
 }

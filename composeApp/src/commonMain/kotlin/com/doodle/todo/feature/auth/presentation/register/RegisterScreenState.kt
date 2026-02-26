@@ -2,6 +2,7 @@ package com.doodle.todo.feature.auth.presentation.register
 
 data class RegisterScreenState(
     val displayName: String = "",
+    val displayNameError: String? = null,
     val email: String = "",
     val emailError: String? = null,
     val password: String = "",
@@ -9,5 +10,11 @@ data class RegisterScreenState(
     val isLoading: Boolean = false,
 ) {
     val isFormValid: Boolean
-        get() = !isLoading && emailError == null && passwordError == null && displayName.isNotBlank()
+        get() = !isLoading &&
+                displayName.isNotBlank() &&
+                email.isNotBlank() &&
+                password.isNotBlank() &&
+                displayNameError == null &&
+                emailError == null &&
+                passwordError == null
 }
