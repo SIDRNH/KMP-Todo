@@ -26,7 +26,8 @@ class RegisterScreenViewModel(
     fun onAction(action: RegisterScreenAction) {
         when(action) {
             is RegisterScreenAction.OnDisplayNameChanged -> {
-                _state.update { it.copy(displayName = action.displayName) }
+                val error = AuthValidators.validateDisplayNameForRegister(action.displayName)
+                _state.update { it.copy(displayName = action.displayName, displayNameError = error) }
             }
             is RegisterScreenAction.OnEmailChanged -> {
                 val error = AuthValidators.validateEmail(action.email)

@@ -3,7 +3,7 @@ package com.doodle.todo.feature.auth.util
 object AuthValidators {
     private val EMAIL_REGEX = Regex("[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\$")
 
-    private val PASSWORD_REGEX = Regex("^( ?=.* [A-Za-z])( ?=.* \\d)( ?=.* [@\$!%*#?&])[A-Za-z\\d@\$!%*#?&]{8,}\$")
+    private val PASSWORD_REGEX = Regex("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@\$!%*#?&])[A-Za-z\\d@\$!%*#?&]{8,}\$")
 
     fun validateEmail(email: String): String? {
         if (email.isBlank()) return "Email is Required"
@@ -19,6 +19,11 @@ object AuthValidators {
 
     fun validatePasswordForLogin(password: String): String? {
         if (password.isBlank()) return "Password is Required"
+        return null
+    }
+
+    fun validateDisplayNameForRegister(displayName: String): String? {
+        if (displayName.isBlank()) return "Name is Required"
         return null
     }
 }
