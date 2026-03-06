@@ -2,6 +2,7 @@ package com.doodle.todo
 
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.window.ComposeViewport
+import com.doodle.todo.di.initKoin
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.FirebaseOptions
 import dev.gitlive.firebase.initialize
@@ -18,6 +19,7 @@ fun main() {
             authDomain = BuildKonfig.FIREBASE_AUTH_DOMAIN
         )
     )
+    initKoin()
     ComposeViewport {
         App()
     }
